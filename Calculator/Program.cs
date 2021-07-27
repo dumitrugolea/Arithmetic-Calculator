@@ -6,10 +6,28 @@ namespace Calculator
     {
         static void EnterValues(out float a, out float b)
         {
-            Console.Write("Enter Value 1: ");
-            a = float.Parse(Console.ReadLine());
+            Console.Write("Enter Value 1: ");          
+            writeA:
+            if (float.TryParse(Console.ReadLine(), out float n))
+            { 
+                a = n; 
+            }
+            else
+            {
+                Console.WriteLine("Wrong format...Try again please!");
+                goto writeA;
+            }
             Console.Write("Enter Value 2: ");
-            b = float.Parse(Console.ReadLine());
+            writeB:
+            if (float.TryParse(Console.ReadLine(), out float k))
+            { 
+                b = k;
+            }
+            else
+            {
+                Console.WriteLine("Wrong format...Try again please!");
+                goto writeB;
+            }    
         }
         static void Addition(float a, float b)
         {
@@ -52,7 +70,6 @@ namespace Calculator
  3 - Multipliation                            
  4 - Division
 ");
-
                 string numberOfOperations = Console.ReadLine();
                 switch (numberOfOperations)
                 {
