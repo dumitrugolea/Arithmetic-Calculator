@@ -33,7 +33,6 @@ namespace Calculator
         {
             Console.WriteLine($"\n{a} + {b} = {a + b} \n");
         }
-
         static void Substraction(float a, float b)
         {
             Console.WriteLine($"\n{a} - {b} = {a - b} \n");
@@ -44,7 +43,6 @@ namespace Calculator
         }
         static void Division(float a, float b)
         {
-
             if (b != 0)
             {
                 Console.WriteLine($"\n{a} / {b} = {a / b} \n");
@@ -53,10 +51,7 @@ namespace Calculator
             {
                 Console.WriteLine("Cannot devide by zero...");
             }
-
         }
-
-
         static void Main(string[] args)
         {
             float a, b;
@@ -64,7 +59,6 @@ namespace Calculator
             while ((input == "Y") && (input != "N"))
             {
                 Console.WriteLine(@"Press any following key to perform an arithmetic operation:
-
  1 - Addition
  2 - Substraction
  3 - Multipliation                            
@@ -93,15 +87,12 @@ namespace Calculator
                         Console.WriteLine("Wrong number...");
                         break;
                 }
-
                 Letter:
                 Console.WriteLine("Do you want to continue again (Y/N)");
                 input = Console.ReadLine();
                 if ((input != "Y") && (input != "N"))
                     goto Letter;
-
             }
-
         }
     }
 }
